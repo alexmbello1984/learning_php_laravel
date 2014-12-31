@@ -7,6 +7,6 @@
 <body>
 	<h1><?= $title ?></h1>	
 	Aprendiendo <strong><?= $language ?></strong> 	
-	<p><a href="contactos.php">Contactos</a></p>
+	<p><a href="index.php?url=contactos">Contactos</a></p>
 </body>
 </html>

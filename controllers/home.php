@@ -1,6 +1,4 @@
 <?php 
-	require "config.php";
-	require "helpers.php";
 	
 	$confidential = "Esta variable es confidencial";
 	$language = "PHP"; 

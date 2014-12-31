@@ -1,21 +1,39 @@
-ESTRUCTURA
+FRONTEND CONTROLLER
 
-helloworld ahora se llama home
-view ahora se llama home.tpl.ph
+compañia de seguros es un buen ejemplo
 
-crear otra pagina contactos
-junto con su vista contactos.tpl.php
+¿Si necesitas hacer un tramite, entras sin mas ni mas?
 
-se creo carpeta de vistas
+No.
 
-las vistas llevan html con el minimo php
-los archivos que no tienen extension tpl.php no deben llevar nada de html a menos que sea un helper
+En la entrada se encuentra con personal de seguridad
+Detectores de metales, dos vigilantes.
 
-Nota de separacion de enfoque:
+El recepcionista le  preguntara a donde quiere ir?, les dara un carnet y les redirigira a un piso en particular.
 
-	controlador contactos: solo necesita llamar a la vista de contactos, no deberia tener ningun tipo de configuracion, deberia ser lo mas limpio posible
+FrontENd Controller se va a encargar de cargar toda la configuracion que necesita la aplicacion de seguridad, checkeo de seguridad, hacer alguna redireccion, cargar el controlador individual (home y contactos)
 
-	vista de contactos: solo necesita imprimir el html de contactos
+Vamos a crear un fronend Controller
 
 
+crear directorio llamado controllers
 
+pero es necesario que el usuario no conozca como esta organizada nuestra aplicacion  ejemplo que no sepa que hay una carpeta cotrollers para acceder a los controladores.
+Ni donde estan las vistas ni donde estan los modelos.
+
+FronEndController nos ayuda con esto
+
+quitamos las lineas de configuracion de los controladores y las pasamos al FrontEndController 
+
+quitamos dichas lineas de los controladores home y contactos
+
+luego en el FEC llamamos a los controladores individuales
+
+al hacerlo asi
+// index.php?url=contactos
+
+las variables globales son el principio de todo lo malo en programacion
+
+ya tenemos un FronEnd Controller los controladores estan en una carpeta
+
+No obstante tampo es la forma correcta de hacerlo ya que cuando estamos repitiendo codigo al tener para cada controlador una linea.
