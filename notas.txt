@@ -1,20 +1,21 @@
-REUSABILIDAD
+ESTRUCTURA
 
-Se crea un archivo config.php
+helloworld ahora se llama home
+view ahora se llama home.tpl.ph
 
-include --> no es obligatorio si no lo carga
-require --> el archivo es obligatorio, si no lo carga genera un error.
+crear otra pagina contactos
+junto con su vista contactos.tpl.php
 
-pasamos la configuracion de errores ahi.
+se creo carpeta de vistas
 
-Creamos un archivo helpers.php  que contendra fracciones de codigo a hacer algunas tareas
-y movemos la funcion view y asi ya nos libramos de codigo repetitivo boilerplate
+las vistas llevan html con el minimo php
+los archivos que no tienen extension tpl.php no deben llevar nada de html a menos que sea un helper
 
-adicionalmente ajustamos la funcion view porque no es reusable para que lo sea.
+Nota de separacion de enfoque:
 
-extraemos el arreglo de variables que se pasaran a la vista a variables sueltas para no tener que usuario indices 
+	controlador contactos: solo necesita llamar a la vista de contactos, no deberia tener ningun tipo de configuracion, deberia ser lo mas limpio posible
 
-['language' => $language,'title' => $title]    es igual compact( 'language' , 'title')
+	vista de contactos: solo necesita imprimir el html de contactos
 
 
-Con esto quedo reusable la funcion view, separados los archivos comunes.
+
