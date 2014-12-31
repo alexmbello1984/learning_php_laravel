@@ -1,8 +1,18 @@
-ENCAPSULANDO EL CODIGO
+ERRORES EN PHP
 
-al encapsula el llamado de view.php se tiene la limitante de no 
-tener acceso a las variables que estan fuera de la funcion.
+Errores fatales terminan por completo la ejecucion
+Errores Warning advertencias
+Errores tipo Notice notificancion "menos importante"
 
-tendremos que pasarle a la funcion las variables que queremos que
-sean visibles en la vista.
+Es una muy mala practica ocultar los errores en el entorno de desarrollo
 
+Debemos cerciorarnos que todos los errores se muestren, en nuestro camino a ser mejores desarrolladores.
+
+En un servidor de produccion no deberiamos mostrar los errores, deberiamos configurar php para que en produccion los errores se fueran a un archivo log de errores en el que quedarian guardados los notices, los warnings etc. el usuario no veria nada de esto.
+
+
+Hasta aqui tenemos otros problemas
+
+primero: Si tenemos mas archivos ejemplo hellocolombia.php, hellofrancia.php tendriamos que tener la misma configuracion de errores, pero estariamos duplicando codigo  y esto es una muy mala practica. De modo que tendremos que unificar la configuracion.
+
+segundo: la funcion view se crea no solo para encapsular sino para poder reutilizar, de modo que tendremos que crear un helper para que quede reutilizable.
