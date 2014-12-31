@@ -1,0 +1,9 @@
+SEPARANDO LOGICA Y PRESENTACION
+
+Se saca la logica de presentacion al archivo view.php
+
+Se deja en helloworld.php solo logica de aplicacion, como solo tendra codigo php dejaremos sin cerrar la etiqueta php
+
+Se incluye el archivo view.php que usará las variables de la logica
+
+<?php=    es como si hicieras <?php echo
