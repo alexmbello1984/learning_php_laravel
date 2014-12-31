@@ -1,12 +1,13 @@
-REFACTORIZANDO EL FRONTEND CONTROLLER
+URLS AMIGABLES
 
-El codigo se esta llenando de fragmentos de codigo similares, esto es alarmante.
+crear archivo.htaccess acompañando a index.php
 
-Esto se ve en el frontEnd Controller al ver el if.. else if... else if... y en todos hace un require a un archivo
-si tuviesemos 30 paginas tendriamos que duplicar 30 veces ese mismo codigo.
+<IfModule mod_rewrite.c> //si el modulo esta activo
+	RewriteEngine on     //activar el motor 
+	RewriteCond %{REQUEST_FILENAME} !-f  // siel archivo no existe
+	RewriteRule ^(.*)$ index.php?url=$1 [QSA,L] // entonces ejecuta se envia a la ruta index.html?ruta+lo adicional
 
-vamos a quitarle la responsabilidad al frontend controller y dejarlo en un helper
+</IfModule>
 
-el helper controller recibe el nombre del controlador, arma la ruta completa y verifica que exista el archivo y lo incluye.
+de esta forma htacces se encargara de traducir una url amigable a la url como la necesita nuestro framework
 
-el frontend controller unicamente va a validar de momento que tenga si recibe el parametro ruta o si no y llama el helper que carga el controlador.
