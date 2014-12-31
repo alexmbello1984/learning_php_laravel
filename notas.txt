@@ -1,39 +1,12 @@
-FRONTEND CONTROLLER
+REFACTORIZANDO EL FRONTEND CONTROLLER
 
-compañia de seguros es un buen ejemplo
+El codigo se esta llenando de fragmentos de codigo similares, esto es alarmante.
 
-¿Si necesitas hacer un tramite, entras sin mas ni mas?
+Esto se ve en el frontEnd Controller al ver el if.. else if... else if... y en todos hace un require a un archivo
+si tuviesemos 30 paginas tendriamos que duplicar 30 veces ese mismo codigo.
 
-No.
+vamos a quitarle la responsabilidad al frontend controller y dejarlo en un helper
 
-En la entrada se encuentra con personal de seguridad
-Detectores de metales, dos vigilantes.
+el helper controller recibe el nombre del controlador, arma la ruta completa y verifica que exista el archivo y lo incluye.
 
-El recepcionista le  preguntara a donde quiere ir?, les dara un carnet y les redirigira a un piso en particular.
-
-FrontENd Controller se va a encargar de cargar toda la configuracion que necesita la aplicacion de seguridad, checkeo de seguridad, hacer alguna redireccion, cargar el controlador individual (home y contactos)
-
-Vamos a crear un fronend Controller
-
-
-crear directorio llamado controllers
-
-pero es necesario que el usuario no conozca como esta organizada nuestra aplicacion  ejemplo que no sepa que hay una carpeta cotrollers para acceder a los controladores.
-Ni donde estan las vistas ni donde estan los modelos.
-
-FronEndController nos ayuda con esto
-
-quitamos las lineas de configuracion de los controladores y las pasamos al FrontEndController 
-
-quitamos dichas lineas de los controladores home y contactos
-
-luego en el FEC llamamos a los controladores individuales
-
-al hacerlo asi
-// index.php?url=contactos
-
-las variables globales son el principio de todo lo malo en programacion
-
-ya tenemos un FronEnd Controller los controladores estan en una carpeta
-
-No obstante tampo es la forma correcta de hacerlo ya que cuando estamos repitiendo codigo al tener para cada controlador una linea.
+el frontend controller unicamente va a validar de momento que tenga si recibe el parametro ruta o si no y llama el helper que carga el controlador.

@@ -8,6 +8,15 @@
 function view( $template, $vars = array() )
 {
 	extract( $vars );
-	
-	require "views/$template.tpl.php";	
+	require "views/$template.tpl.php";
+}
+
+function controller($name)
+{
+	$file_controller = 	"controllers/$name.php";
+	if( !file_exists($file_controller) )
+	{
+		$file_controller = 	"controllers/404.php";
+	}
+	require $file_controller;	
 }
