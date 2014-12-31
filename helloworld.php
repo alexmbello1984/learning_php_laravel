@@ -1,15 +1,8 @@
 <?php 
-	//decimos a PHP que nos muestre todos los errores
-	ini_set('display_errors',true);
-	error_reporting(E_ALL);
-
+	require "config.php";
+	require "helpers.php";
+	
 	$confidential = "Esta variable es confidencial";
 	$language = "PHP"; 
-
-
-	function view($language)
-	{
-		require "view.php";	
-	}
-	
-    view($language);
+	$title = "learning_laravel";
+	view( 'view' , compact( 'language' , 'title') );

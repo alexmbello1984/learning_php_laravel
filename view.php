@@ -5,7 +5,7 @@
 	<title>mejorandophp</title>
 </head>
 <body>
-	<h1>Ejercicio</h1>	
+	<h1><?= $title ?></h1>	
 	Aprendiendo <strong><?= $language ?></strong> 	
 
 </body>
