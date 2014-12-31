@@ -2,4 +2,10 @@
 	$confidential = "Esta variable es confidencial";
 	$language = "PHP"; 
 
-	require "view.php";
+
+	function view($language)
+	{
+		require "view.php";	
+	}
+	
+    view($language);

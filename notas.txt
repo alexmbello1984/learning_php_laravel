@@ -1,19 +1,8 @@
-SEPARANDO LOGICA Y PRESENTACION
+ENCAPSULANDO EL CODIGO
 
-Se saca la logica de presentacion al archivo view.php
+al encapsula el llamado de view.php se tiene la limitante de no 
+tener acceso a las variables que estan fuera de la funcion.
 
-Se deja en helloworld.php solo logica de aplicacion, como solo tendra codigo php dejaremos sin cerrar la etiqueta php
+tendremos que pasarle a la funcion las variables que queremos que
+sean visibles en la vista.
 
-Se incluye el archivo view.php que usará las variables de la logica
-
-<?php=    es como si hicieras <?php echo
-
-Este problema aunque es un poco mejor tiene bastantes problemas:
-
-Ya estamos separando logica y presentacion pero no estamos encapsulando nada, si tuvieramos informacion sensible como contraseñas y esta variables se pueden imprimir en la vista 
-es porque no estamos encapsulando
-
-En esta instantanea vemos que se puede imprimir en la vista 
-todas las variables de la logica de la aplicacion, esto se 
-soluciona con la encapsulacion bien sea sobre clases o sobre 
-funciones que son las formas de encapsulamiento.
