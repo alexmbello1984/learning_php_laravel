@@ -7,3 +7,8 @@ Se deja en helloworld.php solo logica de aplicacion, como solo tendra codigo php
 Se incluye el archivo view.php que usará las variables de la logica
 
 <?php=    es como si hicieras <?php echo
+
+Este problema aunque es un poco mejor tiene bastantes problemas:
+
+Ya estamos separando logica y presentacion pero no estamos encapsulando nada, si tuvieramos informacion sensible como contraseñas en la vista las podria imprimir cualquier colaborador
+
