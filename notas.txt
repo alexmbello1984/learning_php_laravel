@@ -11,3 +11,10 @@ crear archivo.htaccess acompañando a index.php
 
 de esta forma htacces se encargara de traducir una url amigable a la url como la necesita nuestro framework
 
+urls amigables traduce de esto
+/contactos
+a 
+/index.php?url=contactos
+
+me funciono bien el WWW
+pero no en un directorio alias de wamp en otro disco
