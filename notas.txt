@@ -10,5 +10,10 @@ Se incluye el archivo view.php que usará las variables de la logica
 
 Este problema aunque es un poco mejor tiene bastantes problemas:
 
-Ya estamos separando logica y presentacion pero no estamos encapsulando nada, si tuvieramos informacion sensible como contraseñas en la vista las podria imprimir cualquier colaborador
+Ya estamos separando logica y presentacion pero no estamos encapsulando nada, si tuvieramos informacion sensible como contraseñas y esta variables se pueden imprimir en la vista 
+es porque no estamos encapsulando
 
+En esta instantanea vemos que se puede imprimir en la vista 
+todas las variables de la logica de la aplicacion, esto se 
+soluciona con la encapsulacion bien sea sobre clases o sobre 
+funciones que son las formas de encapsulamiento.

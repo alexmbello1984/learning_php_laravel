@@ -6,6 +6,7 @@
 </head>
 <body>
 	<h1>Ejercicio</h1>	
-	Aprendiendo <strong><?php=  $language ?></strong> 	
+	Aprendiendo <strong><?= $language ?></strong> 	
+	<?= $confidential ?>
 </body>
 </html>
