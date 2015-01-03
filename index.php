@@ -2,8 +2,21 @@
 /**
  * El frontend Controller se encarga de configurar la app
 */
-require "config.php";
-require "helpers.php";
+//general
+require 'config.php';
+require 'helpers.php';
+
+//library
+require 'library/Request.php';
 
 //lamar a los controladores indicado
-controller($_GET['url']);
+if( empty($_GET['url']) )
+{
+	$url = "";	
+}
+else
+{
+	$url = $_GET['url'];
+}	
+
+$request = new Request( $url );

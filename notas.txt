@@ -1,35 +1,39 @@
-UNIVERSO DE OBJETOS
+CREANDO OBJETOS EN PHP
 
-El pensamieto que hay que tener en cuenta al escribir codigo en Orientacion a Objetos.
+Vamos a tomar el miniframework y convertirlo en Programacion Orientado a Objetos.
 
-Imagina que Dios creo este universo y que ese Dios era un programador que creo todo en Programacion Orientado a Objetos.
+miremos que del miniframework deberia ser un objeto
 
-Creó una clase Universo a la que crearia un gran objeto que representaria el universo.
+Mirando el archivo index.php
 
-Creo una clase llamada planeta, Esta tendria las caracteristicas  como dimensiones, masa, densidad forma, entre otros.
+- primero esta la configuracion, de momento se queda asi.
+- llamado al controlador
 
-Creo un objeto llamado Tierra.
+Analisis 
 
-Creo una clase SerVivo que tenia tres metodos importantes nacer(), respirar(), morir()  todos los seres vivios que vivirian en el planeta tierra tendrian esos comportamientos importantes.
+Cuando en el navegador se hace enter para ver home por ejemplo sucede lo siguiente.
 
-Creo una clase que extendiera de SerVivo a la que llamo Animal, por ende todos los animales tendrian los mismos comportamientos de la clase padre SerVivo y le escribio otros metodos adicionales como comer() , desplazarse().
+Se genera una PETICION http a la pagina web
 
-Creo una clase llamada SerHumano que extendia de Animal y que seria mas compleja, esta tiene todos los comportamientos de Animal y de SerVivo.
+el helper controller lo que hace es manejar la peticion para luego llamar a un CONTROLADOR.
 
-Creo otra clase llamada Perro que tambien extiende de la clase Animal y le agrego algunas otros metodos como moverLaCola(), ladrar() que son unicas de la clase animal, pero no estan disponibles en la clase SerHumano.
+LA PETICION seria nuestro primer objeto
 
-Creo una clase por cada animal que conocemos como Caballo, Vaca, Gato,etc.
+Creamos directorio library para almacenar las clases que sean reusables en toda la aplicacion.
 
-Cuando se crea la clase SerHumano la fue formado de otros objetos asi: dos objetos de la clase Ojo, dos de la clase Oreja, un objeto de la clase Cabeza, dos objetos de la clase Pierna, etc.
+Los controladores tambien se van a convertir en clases diferentes que sean Controladores.
 
-
-
-y Arranco a crear muchos OBJETOS de las distintas clases escribio y los puso el planeta Tierra.
-
-Programar Orientado a Objetos es tener el pensamiento Orientado a Objetos muy claro mas alla de saber como se escribe una Clase y  como se instancia un objeto.
+Las vistas tambien van a ser parte de objetos, parte de la respuesta RESPONSE que le devolveremos al usuario.
 
 
+El nombre de la clase debe ser el nombre del archivo
 
+* Creamos la clase Request
+por lo general las variables son protegidas o privadas
+los metodos en su mayoria publicos 
 
+De esta forma la clase tiene mas seguridad ya que podemos realizar algunas validacion que no se podrian hacer si el acceso fuera directo.
 
+Los controladores deben tener accion
+una accion por defecto y las que se requieran
 
