@@ -77,9 +77,26 @@ class Request {
 		//creacion de un objeto dinamico
 		$controller = new $controllerClassName;
 		//ejecucion de un metodo dinamico
-		call_user_func_array( [$controller, $actionMethodName], $params);
+		$response = call_user_func_array( [$controller, $actionMethodName], $params);
 		//$controller->$actionMethodName($params);
+		//si tenemos la interfaz Response podemos llamar execute
+		$this->executeResponse( $response);
+	}
 
+	public function executeResponse($response)
+	{
+		if( $response instanceOf Response)
+		{
+			$response->execute();
+		}elseif( is_string($response)){
+			echo $response;
+		}elseif( is_array($response)){
+			echo json_encode($response);
+		}
+		else
+		{
+			exit('La Respuesta No valida');
+		}
 	}
 
 	//getters vars

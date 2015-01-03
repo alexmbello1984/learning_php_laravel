@@ -3,12 +3,11 @@ class ContactosController {
 
 	public function indexAction()
 	{
-		
+		return new View('contactos', ['title'=>'MejorandoPHP', 'language' => 'php']);
 	}
 
 	public function cityAction( $city )
 	{
-		echo 'ciudad';
-		var_dump($city);
+		return "contactos de " . $city;
 	}
 }

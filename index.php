@@ -9,6 +9,8 @@ require 'helpers.php';
 //library
 require 'library/Request.php';
 require 'library/Inflector.php';
+require 'library/Response.php';
+require 'library/View.php';
 
 //lamar a los controladores indicado
 if( empty($_GET['url']) )
