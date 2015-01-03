@@ -5,10 +5,5 @@
 require "config.php";
 require "helpers.php";
 
-
-//lamar a los controladores individuales
-// index.php si la persona invoca asi enviamos ahome
-if( empty($_GET['url']))
-	$_GET['url'] = 'home';
+//lamar a los controladores indicado
 controller($_GET['url']);
-

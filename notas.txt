@@ -1,20 +1,35 @@
-URLS AMIGABLES
+UNIVERSO DE OBJETOS
 
-crear archivo.htaccess acompañando a index.php
+El pensamieto que hay que tener en cuenta al escribir codigo en Orientacion a Objetos.
 
-<IfModule mod_rewrite.c> //si el modulo esta activo
-	RewriteEngine on     //activar el motor 
-	RewriteCond %{REQUEST_FILENAME} !-f  // siel archivo no existe
-	RewriteRule ^(.*)$ index.php?url=$1 [QSA,L] // entonces ejecuta se envia a la ruta index.html?ruta+lo adicional
+Imagina que Dios creo este universo y que ese Dios era un programador que creo todo en Programacion Orientado a Objetos.
 
-</IfModule>
+Creó una clase Universo a la que crearia un gran objeto que representaria el universo.
 
-de esta forma htacces se encargara de traducir una url amigable a la url como la necesita nuestro framework
+Creo una clase llamada planeta, Esta tendria las caracteristicas  como dimensiones, masa, densidad forma, entre otros.
 
-urls amigables traduce de esto
-/contactos
-a 
-/index.php?url=contactos
+Creo un objeto llamado Tierra.
 
-me funciono bien el WWW
-pero no en un directorio alias de wamp en otro disco
+Creo una clase SerVivo que tenia tres metodos importantes nacer(), respirar(), morir()  todos los seres vivios que vivirian en el planeta tierra tendrian esos comportamientos importantes.
+
+Creo una clase que extendiera de SerVivo a la que llamo Animal, por ende todos los animales tendrian los mismos comportamientos de la clase padre SerVivo y le escribio otros metodos adicionales como comer() , desplazarse().
+
+Creo una clase llamada SerHumano que extendia de Animal y que seria mas compleja, esta tiene todos los comportamientos de Animal y de SerVivo.
+
+Creo otra clase llamada Perro que tambien extiende de la clase Animal y le agrego algunas otros metodos como moverLaCola(), ladrar() que son unicas de la clase animal, pero no estan disponibles en la clase SerHumano.
+
+Creo una clase por cada animal que conocemos como Caballo, Vaca, Gato,etc.
+
+Cuando se crea la clase SerHumano la fue formado de otros objetos asi: dos objetos de la clase Ojo, dos de la clase Oreja, un objeto de la clase Cabeza, dos objetos de la clase Pierna, etc.
+
+
+
+y Arranco a crear muchos OBJETOS de las distintas clases escribio y los puso el planeta Tierra.
+
+Programar Orientado a Objetos es tener el pensamiento Orientado a Objetos muy claro mas alla de saber como se escribe una Clase y  como se instancia un objeto.
+
+
+
+
+
+
