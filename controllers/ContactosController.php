@@ -8,6 +8,7 @@ class ContactosController {
 
 	public function cityAction( $city )
 	{
-		
+		echo 'ciudad';
+		var_dump($city);
 	}
 }

@@ -1,39 +1,27 @@
-CREANDO OBJETOS EN PHP
+OBJETO REQUEST
 
-Vamos a tomar el miniframework y convertirlo en Programacion Orientado a Objetos.
+El objeto request se va a encargar de interpretar la direccion url y llamar al controlador adecuado
 
-miremos que del miniframework deberia ser un objeto
+vamos a tener que saber cual es el nombre de la clase del controlador
 
-Mirando el archivo index.php
+vamos a tener que saber cual es el segmento que contenga el nombre del controlador.
 
-- primero esta la configuracion, de momento se queda asi.
-- llamado al controlador
+vamos a tener que saber cual es el archivo que contiene el controlador.
 
-Analisis 
+creamos estos metodos en la clase request
 
-Cuando en el navegador se hace enter para ver home por ejemplo sucede lo siguiente.
+Necesitamos otra serie de cosas pero de momento lo dejamos asi
 
-Se genera una PETICION http a la pagina web
+la direccion URL va a ser mas compleja 
+1 segmento Nombre del controlador
+2 segmento nombre de la accion
+demas segmentos son las parametros de url
 
-el helper controller lo que hace es manejar la peticion para luego llamar a un CONTROLADOR.
+ejemplo 
+/contactos/city/sogamoso
+o 
+/team/about/alexmbello1984
 
-LA PETICION seria nuestro primer objeto
-
-Creamos directorio library para almacenar las clases que sean reusables en toda la aplicacion.
-
-Los controladores tambien se van a convertir en clases diferentes que sean Controladores.
-
-Las vistas tambien van a ser parte de objetos, parte de la respuesta RESPONSE que le devolveremos al usuario.
-
-
-El nombre de la clase debe ser el nombre del archivo
-
-* Creamos la clase Request
-por lo general las variables son protegidas o privadas
-los metodos en su mayoria publicos 
-
-De esta forma la clase tiene mas seguridad ya que podemos realizar algunas validacion que no se podrian hacer si el acceso fuera directo.
-
-Los controladores deben tener accion
-una accion por defecto y las que se requieran
-
+en vez de hacer codigo estructurado todo en el contructor vamos a ir creando metodos por cada accion para obtener los segmentos
+resolveController(para resolver todo lo relacionado con el controlador comom nombre, archivo, nombre de la clase), resolveAction( para resolver todo lo relacionado con la accion como nombre, nombre del metodo), y resolveParams(para resolver los parametros)
+y finalmente cuando ya tenemos divida la url en una serie de propiedades inteligentes lo que nos queda es ejecutar el controlador.

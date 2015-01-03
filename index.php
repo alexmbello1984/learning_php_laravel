@@ -8,11 +8,12 @@ require 'helpers.php';
 
 //library
 require 'library/Request.php';
+require 'library/Inflector.php';
 
 //lamar a los controladores indicado
 if( empty($_GET['url']) )
 {
-	$url = "";	
+	$url = "";
 }
 else
 {
@@ -20,3 +21,4 @@ else
 }	
 
 $request = new Request( $url );
+$request->execute();
