@@ -18,3 +18,8 @@ index.php?url=home/
 index.php?url=home/index
 /index.php?url=contactos/index/sogamoso
 /index.php?url=contactos/city/sogamoso
+/contactos/city/sogamoso
+/contactos/index
+/
+/home
+home/index
