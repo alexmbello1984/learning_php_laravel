@@ -3,10 +3,9 @@
  * La peticion representa una peticion HTTP 
  * parte de una URL 
  */
- 
 class Request {
 
-	protected $url;
+	protected $RequestUrl;
 	protected $defaultController = 'home';
 	protected $controller;
 	protected $defaultAction = 'index';
@@ -16,10 +15,10 @@ class Request {
 	/**
 	 * Contructor de Request
 	 */
-	public function __construct( $url )
+	public function __construct( $requestUrl )
 	{
-		$this->url = $url;
-		$segments = explode( '/' , $this->getUrl());
+		$this->requestUrl = $requestUrl;
+		$segments = explode( '/' , $this->requestUrl->getUrl());
 		$this->resolveController( $segments );
 		$this->resolveAction( $segments );
 		$this->resolveParams( $segments );
@@ -64,13 +63,14 @@ class Request {
 	 */
 	public function execute()
 	{
-		$controllerFilename 	= $this->getControllerFileName();
-		$controllerClassName 	= $this->getControllerClassName();
-		$actionMethodName 			= $this->getActionMethodName();
-		$params 				= $this->getParams();
+		$controllerFilename     = $this->getControllerFileName();
+		$controllerClassName    = $this->getControllerClassName();
+		$actionMethodName       = $this->getActionMethodName();
+		$params                 = $this->getParams();
+
 		if( ! file_exists( $controllerFilename ) )
 		{
-			exit ("Controlador $controllerFilename no existe");
+			exit ( "Controlador $controllerFilename no existe" );
 		}
 
 		require $controllerFilename;
@@ -81,17 +81,16 @@ class Request {
 		//$controller->$actionMethodName($params);
 		//si tenemos la interfaz Response podemos llamar execute
 		$this->executeResponse( $response);
+
 	}
 
 	public function executeResponse($response)
 	{
-		if( $response instanceOf Response)
+		if(    $response instanceOf Response
+			or $response instanceOf JsonView 
+			or $response instanceOf PlainTextView )
 		{
 			$response->execute();
-		}elseif( is_string($response)){
-			echo $response;
-		}elseif( is_array($response)){
-			echo json_encode($response);
 		}
 		else
 		{
@@ -100,10 +99,7 @@ class Request {
 	}
 
 	//getters vars
-	public function getUrl()
-	{
-		return $this->url;
-	}
+	
 	/**
 	 * Nos permite saber cual es el segmento que contiene el contiene
 	 * el nombre del controlador
@@ -123,7 +119,6 @@ class Request {
 		return $this->params;
 	}
 
-	//another getters
 	public function getActionMethodName()
 	{
 		return Inflector::lowerCamel( $this->getAction() ) . 'Action';

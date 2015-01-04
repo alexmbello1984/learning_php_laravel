@@ -3,11 +3,14 @@ class ContactosController {
 
 	public function indexAction()
 	{
-		return new View('contactos');
+		return new View('contactos',['title'=>'Lista de Contactos']);
 	}
 
 	public function cityAction( $city )
 	{
-		return [['nombre'=>'alexander', 'github'=>'alexmbello1984'],['nombre'=>'mejorandola', 'github'=>'mejorandola']];
+		return new JsonView( [
+								['nombre'=>'alexander', 'github'=>'alexmbello1984'],
+								['nombre'=>'mejorandola', 'github'=>'mejorandola']
+							 ] );
 	}
 }

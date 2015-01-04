@@ -1,25 +1,17 @@
-PATRON DECORATOR
+C2 - Actividades para la clase 3
 
-Se usa para definir un layout en nuestras plantillas para quitar tanto html de nustras vistas.
-Para no repetir tantas veces en HTML como vistas tengamos.
+Nivel básico
+● Creen nuevos controladores, acciones y vistas para probar el mini framework
 
-creamos un unico archivo layout.tpl.php
+Nivel intermedio
+● Mejoren la clase View, creando getters como por ejemplo "getTemplateFileName" similar a lo que hicimos en la clase Request, de forma que quede más POO y profesional.
 
-que es el unico punto donde estará el HTML e imprimirá el contenido que se generaá en la vista y que View capurará a esa variable.
+Nivel avanzado
+● Creen nuevos objetos de tipo Response (similar a View) pero para Json, Strings, u otros formatos
+● Separen los métodos de Request que permiten analizar una url en otra clase llamada RequestUrl, Request obtendría todos los datos de la URL del objeto RequestUrl, ej:
 
-ob_start();
-require "views/$template.tpl.php";	
-$tpl_content = ob_get_clean();
-require "views/layout.tpl.php"
+$requestUrl = new RequestUrl($url);
+$request = new Request($requestUrl);
 
-probado con las siguientes url
-index.php?url=home
-index.php?url=home/
-index.php?url=home/index
-/index.php?url=contactos/index/sogamoso
-/index.php?url=contactos/city/sogamoso
-/contactos/city/sogamoso
-/contactos/index
-/
-/home
-home/index
+Bonus Task:
+Integren bootstrap en el layout.tpl.php
