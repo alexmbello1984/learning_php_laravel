@@ -18,7 +18,11 @@ class View extends Response {
 
 		call_user_func(function() use ($template, $vars){
 			extract( $vars );
+			//paramos la salida de texto para poderla capturar y enviar a una variable
+			ob_start();
 			require "views/$template.tpl.php";	
+			$tpl_content = ob_get_clean();
+			require "views/layout.tpl.php";
 		});
 	}
 

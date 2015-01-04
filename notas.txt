@@ -1,42 +1,20 @@
-OBJETO RESPONSE Y VIEW
+PATRON DECORATOR
 
-Cada objeto tiene una responsabilidad unica
+Se usa para definir un layout en nuestras plantillas para quitar tanto html de nustras vistas.
+Para no repetir tantas veces en HTML como vistas tengamos.
 
-Response es un concepto que representa una HTTP o XML o TXT, word, excel, json, etc
+creamos un unico archivo layout.tpl.php
 
-Representa la respuesta que se le envia al usuario.
+que es el unico punto donde estará el HTML e imprimirá el contenido que se generaá en la vista y que View capurará a esa variable.
 
-Todas las respuestas deberian tener un metodo ejecutar()
+ob_start();
+require "views/$template.tpl.php";	
+$tpl_content = ob_get_clean();
+require "views/layout.tpl.php"
 
-Aqui estamos definiendo es un contrato para enviarle la respuesta concreta al usuario
-
-Creamos una clase View que es un tipó de Respuesta HTML 
-
-El constructor crea un objeto pero no lo ejecuta
-
-public function execute()
-	{
-		extract( $vars );
-		require "views/$template.tpl.php";
-	}
-
-hay que cambiarlo porque al hacer el require le daria acceso a los elementos de la clase View en la vista, necesitamos que sea solo lo que le queremos enviar.
-
-asi, ya que al encapsular ya no tendria acceso a las variables de view.
-
-Ejemplo de interfaces
-permiten que la visa sea sencilla
-
-ejemplo cuando aprendes a conducir un carro mecanico aprendes a conducir en todos los carros que tengan la misma interfaces
-interface volante, interfaz acelerador, 
-
-por eso no tenemos que reaprender a conducir cada vez que cambiamos de carro, porque todos tienen las mismas interfaces.
-
-
-Retornamos la vista al request para que el se encargue de ejecutar la respuesta.
-
-Es posible que necesitemos que la respuesta no sea HTML se agrega el caso, esto es util cuando tenemos que retornar strings, JSON array, etc
-Aunque esto deberia ser mas con tipos de Response JsonResponse, StringResponse, etc
-
-Este metodo ya tiene demasiadas lineas de codigo
-
+probado con las siguientes url
+index.php?url=home
+index.php?url=home/
+index.php?url=home/index
+/index.php?url=contactos/index/sogamoso
+/index.php?url=contactos/city/sogamoso
