@@ -1,17 +1,10 @@
-C2 - Actividades para la clase 3
+INSTALACION DE COMPOSER Y LARAVEL
 
-Nivel básico
-● Creen nuevos controladores, acciones y vistas para probar el mini framework
+COMPOSER
+es un proyecto que llevo a un nivel mas alto PHP, dado que antes de composer si un desarrollador creaba una libreria, no tenia una forma buena de conpartir su trabajo con otros desarrolladores por lo que constantemente estabamos reinventando la rueda.
 
-Nivel intermedio
-● Mejoren la clase View, creando getters como por ejemplo "getTemplateFileName" similar a lo que hicimos en la clase Request, de forma que quede más POO y profesional.
+Existia PEAR pero es un poco obsoleto y tiene ciertos inconveniesntes, es a nivel de sistema, no de aplicacion.
+Con COMPOSER se crea una forma de compartir el trabajo entre desarrolladores.
 
-Nivel avanzado
-● Creen nuevos objetos de tipo Response (similar a View) pero para Json, Strings, u otros formatos
-● Separen los métodos de Request que permiten analizar una url en otra clase llamada RequestUrl, Request obtendría todos los datos de la URL del objeto RequestUrl, ej:
+Nos permite en PHP tener a nuestro alcance tener casi todos los componentes y bibliotecas que se van creando para el lenguaje.
 
-$requestUrl = new RequestUrl($url);
-$request = new Request($requestUrl);
-
-Bonus Task:
-Integren bootstrap en el layout.tpl.php
